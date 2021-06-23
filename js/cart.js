@@ -25,12 +25,22 @@ function clearCart() {}
 function showCart() {
 
   // TODO: Find the table body
+  let table= document.getElementById('cart')
 
   // TODO: Iterate over the items in the cart
+  for (let i=0;i<cart.length;i++){
   // TODO: Create a TR
-  // TODO: Create a TD for the delete link, quantity,  and the item
-  // TODO: Add the TR to the TBODY and each of the TD's to the TR
+  let tr=document.createElement('tr')
+  table.appendChild(tr)
+ 
 
+  // TODO: Create a TD for the delete link, quantity,  and the item
+  let td=document.createElement('td');
+  td.textContent=cartItems.product
+  tr.appendChild(td)
+
+  // TODO: Add the TR to the TBODY and each of the TD's to the TR
+}
 }
 
 function removeItemFromCart(event) {
