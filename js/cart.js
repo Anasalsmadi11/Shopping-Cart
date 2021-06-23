@@ -12,7 +12,7 @@ function loadCart() {
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
-function renderCart() {
+function renderCart() { 
   loadCart();
   clearCart();
   showCart();
@@ -25,7 +25,7 @@ function clearCart() {
 }
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
-function showCart() {
+function showCart() { 
 
   // TODO: Find the table body
 
