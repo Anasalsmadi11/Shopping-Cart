@@ -30,7 +30,6 @@ function handleSubmit(event) {
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview();
-
 }
 
 // TODO: Add the selected item and quantity to the cart
@@ -39,13 +38,10 @@ function addSelectedItemToCart(product, quantity) {
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
   cart.addItem(product, quantity);
-  console.log(cart);
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
-  const cartItems = JSON.parse(localStorage.getItem('cart'))
-  cart = new Cart(cartItems);
   let listItems = document.getElementById('itemCount');
   listItems.textContent = cart.items.length;
 }
@@ -55,12 +51,10 @@ function updateCartPreview() {
 
   // TODO: Add a new element to the cartContents div with that information
 
-  const cartItems = JSON.parse(localStorage.getItem('cart'))
-  cart = new Cart(cartItems);
   let cartContents = document.getElementById('cartContents');
   let pElement = document.createElement('p')
   for (let i in cart.items) {
-    pElement.textContent = ` You have added a ${cart.items[i].quantity}  of ${cart.items[i].product}`;
+    pElement.textContent = ` ${cart.items[i].quantity}: of ${cart.items[i].product}`;
     cartContents.appendChild(pElement);
   }
 }
