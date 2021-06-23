@@ -22,9 +22,17 @@ function populateForm() {
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
 
+  
+  console.log(event);
+  
+
   // TODO: Prevent the page from reloading
 
   // Do all the things ...
+  event.preventDefault()
+
+
+
   addSelectedItemToCart();
   cart.saveToLocalStorage();
   updateCounter();
@@ -37,6 +45,10 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
+
+  cart.addItem(event.target.items.value , event.target.quantity.value);
+
+  //console.log(event.target.quantity.value)
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
