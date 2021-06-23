@@ -53,7 +53,7 @@ function updateCartPreview() {
   let cartContents = document.getElementById('cartContents');
   let pElement = document.createElement('p')
   for (let i in cart.items) {
-    pElement.textContent = ` You have added a ${cart.items[i].quantity}  of ${cart.items[i].product}`;
+    pElement.textContent = ` ${cart.items[i].quantity}: of ${cart.items[i].product}`;
     cartContents.appendChild(pElement);
   }
 }
