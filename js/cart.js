@@ -11,7 +11,7 @@ function loadCart() {
   cart = new Cart(cartItems);
 }
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
-function renderCart() {
+function renderCart() { 
   loadCart();
   clearCart();
   showCart();
@@ -24,6 +24,7 @@ function clearCart() {
     tbody.removeChild(tbody.firstChild);
   }
 }
+
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
   let tbody = document.getElementsByTagName('tbody')[0];
@@ -34,6 +35,7 @@ function showCart() {
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
   for (let i in cart.items) {
     let trElement = document.createElement('tr');
+
     tbody.appendChild(trElement);
     let tdElement0 = document.createElement('td');
     let tdElement1 = document.createElement('td');
@@ -54,6 +56,7 @@ function removeItemFromCart(event) {
   cart.removeItem(event.target.id);
   cart.saveToLocalStorage();
   renderCart();
+
 }
 
 // This will initialize the page and draw the cart on screen

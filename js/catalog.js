@@ -50,6 +50,7 @@ function updateCounter() {
 function updateCartPreview() {
 
   // TODO: Add a new element to the cartContents div with that information
+
   let cartContents = document.getElementById('cartContents');
   let pElement = document.createElement('p')
   for (let i in cart.items) {
@@ -66,4 +67,16 @@ catalogForm.addEventListener('submit', handleSubmit);
 
 // Before anything else of value can happen, we need to fill in the select
 // drop down list in the form.
+
+function getData() {
+  let data = JSON.parse(localStorage.getItem('cart'));
+  if (data) {
+    for (let i = 0; i < data.length; i++) {
+      let cart = new Cart(data[i]);
+      updateCounter();
+      updateCartPreview();
+    }
+  }
+}
+getData();
 populateForm();
