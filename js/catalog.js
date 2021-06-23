@@ -7,11 +7,11 @@ const cart = new Cart([]);
 
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
-function populateForm() {
+function populateForm(){
 
   //TODO: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
-  for (let i in Product.allProducts) {
+  for (let i in Product.allProducts){
     let optinElement = document.createElement('option');
     optinElement.textContent = Product.allProducts[i].name;
     selectElement.appendChild(optinElement);
@@ -21,7 +21,7 @@ function populateForm() {
 // When someone submits the form, we need to add the selected item to the cart
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
-function handleSubmit(event) {
+function handleSubmit(event){
 
   
   console.log(event);
@@ -42,7 +42,7 @@ function handleSubmit(event) {
 }
 
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart() {
+function addSelectedItemToCart () {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
@@ -68,14 +68,15 @@ function updateCartPreview() {
   for(let i =0 ; i<cartItems.length;i++){
     //new Cart(cartItems[i].quantity , cartItems[i].Product);
   
-  
-  let cartContents = document.getElementById('cartContents');
-  let pElement = document.createElement('p');
-  pElement.textContent= `${cartItems[i].quantity} : ${cartItems[i].product}` ;
-  cartContents.appendChild(pElement);
-  
+    
+    let cartContents = document.getElementById('cartContents');
+    let pElement = document.createElement('p');
+    pElement.textContent= `${cartItems[i].quantity} : ${cartItems[i].product}`;
+    cartContents.appendChild(pElement);
+    
   }
   // TODO: Add a new element to the cartContents div with that information
+  // things have been DONE in Group
 }
 
 
