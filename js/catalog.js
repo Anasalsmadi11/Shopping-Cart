@@ -61,9 +61,23 @@ function updateCounter() {
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+
   // TODO: Get the item and quantity from the form
+  const cartItems = JSON.parse(localStorage.getItem('cart'));
+  console.log(cartItems);
+  for(let i =0 ; i<cartItems.length;i++){
+    //new Cart(cartItems[i].quantity , cartItems[i].Product);
+  
+  
+  let cartContents = document.getElementById('cartContents');
+  let pElement = document.createElement('p');
+  pElement.textContent= `${cartItems[i].quantity} : ${cartItems[i].product}` ;
+  cartContents.appendChild(pElement);
+  
+  }
   // TODO: Add a new element to the cartContents div with that information
 }
+
 
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will
