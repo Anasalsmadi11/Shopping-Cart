@@ -30,7 +30,7 @@ function handleSubmit(event) {
   // TODO: Prevent the page from reloading
   event.preventDefault();
   // Do all the things ...
-  event.preventDefault()
+  
 
 
 
@@ -53,7 +53,11 @@ function addSelectedItemToCart() {
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() { }
+function updateCounter() { 
+  let itemCount = document.getElementById('itemCount');
+  itemCount.textContent = cart.items.length;
+  
+}
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
