@@ -73,8 +73,8 @@ function updateCartPreview() {
     let pElement = document.createElement('p');
     pElement.textContent= `${cartItems[i].quantity} : ${cartItems[i].product}`;
     cartContents.appendChild(pElement);
-    
   }
+    
   // TODO: Add a new element to the cartContents div with that information
   // things have been DONE in Group
 }
